@@ -24,8 +24,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+            .findFragmentById(R.id.map) as SupportMapFragment // supportFragmentManager의 아이디인 map을 가져와
+        mapFragment.getMapAsync(this) // .getMapAsync로 맵을 그리도록 호출한다
     }
 
     /**
@@ -41,8 +41,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        //val sydney = LatLng(-34.0, 151.0)
+        val korea = LatLng(37.566418, 126.977943)
+        mMap.addMarker(MarkerOptions().position(korea).title("Marker in Sydney"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(korea))
     }
 }
